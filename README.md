@@ -1,6 +1,5 @@
-# Capstone2_Detecting_Heavy_Drinking
-
-Capstone 2 Proposal: Detecting Heavy Drinking with Smartphone Accelerometer Data
+# Capstone 2: Detecting Heavy Drinking with Smartphone Accelerometer Data
+For Springboard Data Science Career Track
 
 Alcohol consumption has been associated with injury, short- and long-term health consequences, chronic and acute illnesses, and unintentional death. A 2010 CDC report  found that an estimated 88,000 people die from alcohol-related causes annually, making alcohol the third leading preventable cause of death in the United States, preceded only by tobacco (first leading preventable cause) and poor diet and physical inactivity (second leading preventable cause). 
 
