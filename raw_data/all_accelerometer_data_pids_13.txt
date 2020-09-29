@@ -1,0 +1,5 @@
+To download the file, access the UCI Machine Learing Repository:
+http://archive.ics.uci.edu/ml/datasets/Bar+Crawl%3A+Detecting+Heavy+Drinking
+
+Or download from google drive folder:
+https://drive.google.com/file/d/1hnyVjzw1N3iyy1kDzA-50A2kV3W4JuZa/view?usp=sharing
