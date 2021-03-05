@@ -1,0 +1,49 @@
+Final Model: xgboost.XGBClassifier()
+
+Parameters:
+{'objective': 'binary:logistic',
+ 'use_label_encoder': True,
+ 'base_score': 0.5,
+ 'booster': 'gbtree',
+ 'colsample_bylevel': 1,
+ 'colsample_bynode': 1,
+ 'colsample_bytree': 1,
+ 'gamma': 0,
+ 'gpu_id': -1,
+ 'importance_type': 'gain',
+ 'interaction_constraints': '',
+ 'learning_rate': 0.1,
+ 'max_delta_step': 0,
+ 'max_depth': 15,
+ 'min_child_weight': 1,
+ 'missing': nan,
+ 'monotone_constraints': '()',
+ 'n_estimators': 1000,
+ 'n_jobs': 12,
+ 'num_parallel_tree': 1,
+ 'random_state': 1,
+ 'reg_alpha': 0,
+ 'reg_lambda': 1,
+ 'scale_pos_weight': 1,
+ 'subsample': 1,
+ 'tree_method': 'exact',
+ 'validate_parameters': 1,
+ 'verbosity': None,
+ 'seed': 1}
+
+Performance Metrics:
+	Accuracy: 	0.909
+	F1-score: 	0.909
+	Precision: 	0.891
+	Recall (TPR):	0.931
+	FPR: 		0.11
+	ROC AUC: 	0.97
+	Avg Precision-Recall Score: 0.86
+
+	Confusion Matrix without Normalization:
+		[[1255  162]
+		 [  98 1331]]
+
+	Confusion Matrix with Normalization:
+		[[0.89 0.11]
+		 [0.07 0.93]]
