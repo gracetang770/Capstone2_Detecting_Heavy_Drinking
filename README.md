@@ -63,16 +63,23 @@ XGBoost out-of-the-box performed best, followed by RF out-of-the-box. I took bot
 For the top 20 features of the best-performing models, a significant portion of the top 20 features pertain to the standard deviation of another feature (14 of 20 for XGB-optimized, 16 of 20 for XGB). I similarly looked into the bottom 10 least important features of these models, none of them included the standard deviation of another feature. Computing the standard deviation of every feature seems to provide more predictive power to the model.
 
 ## Future Directions:
+
 If this model were to be implemented into a just-in-time adaptive intervention app, there is still room for improvement. Had there been more time, I would have liked to do more hyperparameter tuning on the RF classifiers to improve its predictive power while keeping it light. I also would have liked to do the same with XGB Classifier, tuning it while keeping the n_estimators capped at 100 to avoid making the model heavier.
+
 Alternative models that were not discussed here could also be looked into. Instead of randomly selecting data from each participant when preparing the training data, I could opt to preserve the datetime index and use it in combination with the features to predict blood alcohol content ahead of time, using forecasting methods like ARIMA or Facebook Prophet.
 
 ## Credit:
+
 I would like to thank Chris Esposo for being an awesome Springboard mentor.
+
 I would like to thank Jackson A Killian (jkillian '@' g.harvard.edu, Harvard University); Danielle R Madden (University of Southern California); John Clapp (University of Southern California) for uploading this valuable dataset to the UCI Machine Learning Repository.
 
 ## Sources:
+
 Killian, J.A., Passino, K.M., Nandi, A., Madden, D.R. and Clapp, J., Learning to Detect Heavy Drinking Episodes Using Smartphone Accelerometer Data. In Proceedings of the 4th International Workshop on Knowledge Discovery in Healthcare Data co-located with the 28th International Joint Conference on Artificial Intelligence (IJCAI 2019) (pp. 35-42). http://ceur-ws.org/Vol-2429/paper6.pdf
+
 Dataset: http://archive.ics.uci.edu/ml/datasets/Bar+Crawl%3A+Detecting+Heavy+Drinking
+
 https://www.niaaa.nih.gov/publications/brochures-and-fact-sheets/alcohol-facts-and-statistics
 https://pubs.niaaa.nih.gov/publications/aa74/aa74.htm
 https://pubs.niaaa.nih.gov/publications/aa87/aa87.htm
