@@ -81,5 +81,7 @@ Killian, J.A., Passino, K.M., Nandi, A., Madden, D.R. and Clapp, J., Learning to
 Dataset: http://archive.ics.uci.edu/ml/datasets/Bar+Crawl%3A+Detecting+Heavy+Drinking
 
 https://www.niaaa.nih.gov/publications/brochures-and-fact-sheets/alcohol-facts-and-statistics
+
 https://pubs.niaaa.nih.gov/publications/aa74/aa74.htm
+
 https://pubs.niaaa.nih.gov/publications/aa87/aa87.htm
