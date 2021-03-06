@@ -32,7 +32,7 @@ The dataset had only 3 independent variables (x, y, and z accelerometer data) to
  * Snap (the gradient of jerk) and the above features for Snap.
  * The standard deviation of all of the above features.
 
-## Modeling:
+## Modeling and Results:
 
 After featurization, I had 310 columns and 11.28 million rows. To reduce the size of my dataset, I sampled n=400 random rows from each participant/class combination (13 participants, 2 classes). This resulted in 2 dataframes with 10400 rows and 310 columns. I then dropped any columns containing 100 or more NaN values, and then dropped any rows containing NaN or np.inf values. This left me with 2 dataframes completely clean from any NaN or infinite values. My raw/interpolated dataset contained 9107 rows and 293 columns, and my TMA-smoothed dataset contained 9486 rows and 287 columns. I conducted a 70/30 train/test split and scaled the data.
 
@@ -58,16 +58,21 @@ XGBoost out-of-the-box performed best, followed by RF out-of-the-box. I took bot
 |RF-optimized|tma|0.768|0.765|0.722|0.874|0.85|0.69|__0.528__|
 |__XGBoost-optimized__|tma|__0.909__|__0.909__|__0.891__|__0.931__|__0.97__|__0.86__|32.856|
 
-## Feature Importance:
+### Feature Importance:
 
-For the top 20 features of the best-performing models, a significant portion of the top 20 features pertain to the standard deviation of another feature (14 of 20 for XGB-optimized, 16 of 20 for XGB). I similarly looked into the bottom 10 least important features of these models, none of them included the standard deviation of another feature. As suspected in the exploratory data analysis and data preprocessing steps, there appeared to be more spread/variation in the features when the participant was intoxicated compared to when they were not intoxicated. Computing the standard deviation of every feature has indeed  provided more predictive power to the model.
+For the top 20 features of the best-performing models, a significant portion of the top 20 features pertain to the standard deviation of another feature (14 of 20 for XGB-optimized, 16 of 20 for XGB). I similarly looked into the bottom 10 least important features of these models, none of them included the standard deviation of another feature. Computing the standard deviation of every feature seems to provide more predictive power to the model.
+
+## Future Directions:
+If this model were to be implemented into a just-in-time adaptive intervention app, there is still room for improvement. Had there been more time, I would have liked to do more hyperparameter tuning on the RF classifiers to improve its predictive power while keeping it light. I also would have liked to do the same with XGB Classifier, tuning it while keeping the n_estimators capped at 100 to avoid making the model heavier.
+Alternative models that were not discussed here could also be looked into. Instead of randomly selecting data from each participant when preparing the training data, I could opt to preserve the datetime index and use it in combination with the features to predict blood alcohol content ahead of time, using forecasting methods like ARIMA or Facebook Prophet.
+
+## Credit:
+I would like to thank Chris Esposo for being an awesome Springboard mentor.
+I would like to thank Jackson A Killian (jkillian '@' g.harvard.edu, Harvard University); Danielle R Madden (University of Southern California); John Clapp (University of Southern California) for uploading this valuable dataset to the UCI Machine Learning Repository.
 
 ## Sources:
-
 Killian, J.A., Passino, K.M., Nandi, A., Madden, D.R. and Clapp, J., Learning to Detect Heavy Drinking Episodes Using Smartphone Accelerometer Data. In Proceedings of the 4th International Workshop on Knowledge Discovery in Healthcare Data co-located with the 28th International Joint Conference on Artificial Intelligence (IJCAI 2019) (pp. 35-42). http://ceur-ws.org/Vol-2429/paper6.pdf
-
 Dataset: http://archive.ics.uci.edu/ml/datasets/Bar+Crawl%3A+Detecting+Heavy+Drinking
-
 https://www.niaaa.nih.gov/publications/brochures-and-fact-sheets/alcohol-facts-and-statistics
 https://pubs.niaaa.nih.gov/publications/aa74/aa74.htm
 https://pubs.niaaa.nih.gov/publications/aa87/aa87.htm
